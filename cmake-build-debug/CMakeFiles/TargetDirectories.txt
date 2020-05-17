@@ -1,0 +1,3 @@
+/home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles/MatrixProject.dir

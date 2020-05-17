@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/raf/CLionProjects/MatrixProject/MatrixOps.cpp
+cstdio
+-
+MatrixOps.h
+/home/raf/CLionProjects/MatrixProject/MatrixOps.h
+
+/home/raf/CLionProjects/MatrixProject/MatrixOps.h
+vector
+-
+iostream
+-
+
+/home/raf/CLionProjects/MatrixProject/main.cpp
+iostream
+-
+MatrixOps.h
+/home/raf/CLionProjects/MatrixProject/MatrixOps.h
+
