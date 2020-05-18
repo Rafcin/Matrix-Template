@@ -24,7 +24,7 @@ private:
     std::vector<std::vector<T>> matrix;
     size_t rows, cols;
     //handle removing ptrs and or deleting vectors
-    void destroyMatrix();
+    void clear();
 public:
     MatrixOps();
     MatrixOps(size_t rows, size_t cols);
@@ -41,9 +41,7 @@ public:
 
     MatrixOps<T>& operator=(const MatrixOps<T> &m);
     MatrixOps<T>& operator+=(const MatrixOps<T> &n);
-    MatrixOps<T>& operator-=(const MatrixOps<T> &n);
-    MatrixOps<T>& operator*=(const MatrixOps<T> &n);
-    MatrixOps<T>& operator/=(const MatrixOps<T> &m);
+
 
     std::vector<T>& operator[](size_t index);
 
@@ -72,9 +70,15 @@ void MatrixOps<T>::setCols(size_t cols){
     }else{this->cols =0;}
 }
 
-
-template <typename T>
-std::vector<T>& MatrixOps<T>::operator[](size_t index){return matrix[index];}
+template<typename T>
+inline void MatrixOps<T>::clear()
+{
+    rows = cols = 0;
+    typename std::vector<std::vector<T>>::iterator mDelIt;
+    for (mDelIt = matrix.begin(); mDelIt != matrix.end(); mDelIt ++)
+        mDelIt->clear();
+    matrix.clear();
+}
 
 template <typename T>
 //def no params
@@ -82,27 +86,6 @@ MatrixOps<T>::MatrixOps(){rows = cols = 0;}
 
 template <typename T>
 MatrixOps<T>::MatrixOps(const MatrixOps<T> &m){*this = m;}
-
-template <typename T>
-void MatrixOps<T>::print(){
-    for(size_t i = 0; i < rows; i++){
-        for(size_t j = 0; j < cols; j++){
-            std::cout << matrix[i][j] << ' ';
-        }
-        std::cout << std::endl;
-    }
-}
-
-template <typename T>
-MatrixOps<T>& MatrixOps<T>::operator=(const MatrixOps<T> &m){
-    setRows(m.getRows());
-    setCols(m.getCols());
-    for(size_t i = 0; i < rows; i++){
-        for(size_t j = 0; j < cols; j++){
-            this->matrix[i][j] = m.matrix[i][j];
-        }
-    }
-}
 
 template <typename T>
 // using size_t because it can handle more. MAX_SIZE
@@ -122,7 +105,33 @@ MatrixOps<T>::MatrixOps(size_t rows, size_t cols){
 
 template<typename T>
 MatrixOps<T>::~MatrixOps() {
-    //destroyMatrix();
+    clear();
+}
+
+template <typename T>
+std::vector<T>& MatrixOps<T>::operator[](size_t index){return matrix[index];}
+
+template <typename T>
+MatrixOps<T>& MatrixOps<T>::operator=(const MatrixOps<T> &m){
+    setRows(m.getRows());
+    setCols(m.getCols());
+    for(size_t i = 0; i < rows; i++){
+        for(size_t j = 0; j < cols; j++){
+            this->matrix[i][j] = m.matrix[i][j];
+        }
+    }
+}
+
+template <typename T>
+MatrixOps<T>& MatrixOps<T>::operator+=(const MatrixOps<T> &n){
+    if(rows == n.getRows() && cols == n.getCols){
+        for(size_t i = 0; i < rows; i++){
+            for(size_t j = 0; j < cols; j++){
+                matrix[i][j] += n.matrix[i][j];
+            }
+        }
+    }
+    return *this;
 }
 
 
