@@ -1,31 +1,17 @@
 #include <iostream>
 #include "MatrixOps.h"
 
-template <class T>
-void print(MatrixOps<T> &m, std::string msg)
-{
-    std::cout << "=======================================\n";
-    std::cout << msg;
-    std::cout << "\nRows = " << m.getRows() << " Cols = " << m.getCols() << "\n\n";
-    for (int i = 0; i < m.getRows(); i++)
-    {
-        for (int j = 0; j < m.getCols(); j++)
-            std::cout << m[i][j] << " ";
-        std::cout << "\n";
-    }
-    std::cout << "=======================================\n\n";
-}
 int main() {
-    MatrixOps<double> m1(3, 3), m2(2, 3);
-    for (int i = 0; i < m1.getRows(); i++)
-        for (int j = 0; j < m1.getCols(); j++)
-            m1[i][j] = rand() % 10 + 1;
+    MatrixOps<int> A(4,5);
+    MatrixOps<int> B(4,5);
+    MatrixOps<int> C(5,6);
+    MatrixOps<int> W({{1,2,3},{4,5,6}});
+    MatrixOps<int> Z({{1,5,3},{9,5,6}});
 
-    for (int i = 0; i < m2.getRows(); i++)
-        for (int j = 0; j < m2.getCols(); j++)
-            m2[i][j] = rand() % 10 + 1;
+    MatrixOps<int> D = W + Z;  // = A.add(B)
+    W.printMatrix();
+    Z.printMatrix();
+    D.printMatrix();
 
-    print(m1, "m1");
-    print(m2, "m2");
     return 0;
 }
