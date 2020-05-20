@@ -3,4 +3,4 @@ project(MatrixProject)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(MatrixProject main.cpp MatrixOps.cpp MatrixOps.h)
+add_executable(MatrixProject main.cpp MatrixOps.cpp MatrixOps.h MatrixFileIO.cpp MatrixFileIO.h)

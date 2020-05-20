@@ -123,6 +123,33 @@ MatrixProject/fast:
 	$(MAKE) -f CMakeFiles/MatrixProject.dir/build.make CMakeFiles/MatrixProject.dir/build
 .PHONY : MatrixProject/fast
 
+MatrixFileIO.o: MatrixFileIO.cpp.o
+
+.PHONY : MatrixFileIO.o
+
+# target to build an object file
+MatrixFileIO.cpp.o:
+	$(MAKE) -f CMakeFiles/MatrixProject.dir/build.make CMakeFiles/MatrixProject.dir/MatrixFileIO.cpp.o
+.PHONY : MatrixFileIO.cpp.o
+
+MatrixFileIO.i: MatrixFileIO.cpp.i
+
+.PHONY : MatrixFileIO.i
+
+# target to preprocess a source file
+MatrixFileIO.cpp.i:
+	$(MAKE) -f CMakeFiles/MatrixProject.dir/build.make CMakeFiles/MatrixProject.dir/MatrixFileIO.cpp.i
+.PHONY : MatrixFileIO.cpp.i
+
+MatrixFileIO.s: MatrixFileIO.cpp.s
+
+.PHONY : MatrixFileIO.s
+
+# target to generate assembly for a file
+MatrixFileIO.cpp.s:
+	$(MAKE) -f CMakeFiles/MatrixProject.dir/build.make CMakeFiles/MatrixProject.dir/MatrixFileIO.cpp.s
+.PHONY : MatrixFileIO.cpp.s
+
 MatrixOps.o: MatrixOps.cpp.o
 
 .PHONY : MatrixOps.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MatrixProject"
+	@echo "... MatrixFileIO.o"
+	@echo "... MatrixFileIO.i"
+	@echo "... MatrixFileIO.s"
 	@echo "... MatrixOps.o"
 	@echo "... MatrixOps.i"
 	@echo "... MatrixOps.s"

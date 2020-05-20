@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <iostream>
+#include <cmath>
 /**
  * @TODO
  * 1. fix system crash when reaching print
@@ -33,8 +34,10 @@ class MatrixOps{
 
         void printMatrix();
 
+
         size_t getRows() const;
         size_t getCols() const;
+        size_t getSize() const;
 
         T get(size_t x, size_t y) const;
 
@@ -59,6 +62,7 @@ class MatrixOps{
         MatrixOps<T> operator/=(const T &m);
         MatrixOps<T> div(const T& m) const;
 
+        double determinant();
 };
 
 template <class T>
@@ -125,6 +129,11 @@ size_t MatrixOps<T>::getRows() const{
 template <class T>
 size_t MatrixOps<T>::getCols() const{
     return cols;
+}
+
+template <class T>
+size_t MatrixOps<T>::getSize() const{
+    return data.size();
 }
 
 template <class T>
@@ -273,4 +282,37 @@ MatrixOps<T> MatrixOps<T>::operator/=(const T &m){
 template <class T>
 MatrixOps<T> operator/(const MatrixOps<T>& one, const T &two){
     return one.div(two);
+}
+
+
+template <class T>
+double MatrixOps<T>::determinant(){
+    double determinant = 1;
+    if (rows && cols > 0 && rows == cols){
+        if (rows == 1){
+            return data[0][0];
+        }else{
+            std::vector<std::vector<T>> storeMatrix;
+            storeMatrix= data;
+            double r;
+
+            for (int i = 0; i < rows; i++){
+                for (int j = 0; j < i; j++){
+                    if (i > 0){
+                        r = storeMatrix[i][j] / storeMatrix[j][j];
+                        for (int k = 0; k < cols; k++){
+                            storeMatrix[i][k] += storeMatrix[j][k] * r * -1;
+                        }
+                    }else{continue;}
+                }
+            }
+            for (int i = 0; i < rows; i++){
+                determinant *= storeMatrix[i][i];
+            }
+            return determinant;
+        }
+    }else{
+        throw std::invalid_argument("Invalid determinant operation");
+        return 0;
+    }
 }

@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/raf/CLionProjects/MatrixProject/MatrixFileIO.cpp">
+			<Option target="MatrixProject"/>
+		</Unit>
+		<Unit filename="/home/raf/CLionProjects/MatrixProject/MatrixFileIO.h">
+			<Option target="MatrixProject"/>
+		</Unit>
 		<Unit filename="/home/raf/CLionProjects/MatrixProject/MatrixOps.cpp">
 			<Option target="MatrixProject"/>
 		</Unit>

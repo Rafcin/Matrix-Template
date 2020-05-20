@@ -74,12 +74,12 @@ clean: CMakeFiles/MatrixProject.dir/clean
 CMakeFiles/MatrixProject.dir/all:
 	$(MAKE) -f CMakeFiles/MatrixProject.dir/build.make CMakeFiles/MatrixProject.dir/depend
 	$(MAKE) -f CMakeFiles/MatrixProject.dir/build.make CMakeFiles/MatrixProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target MatrixProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target MatrixProject"
 .PHONY : CMakeFiles/MatrixProject.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MatrixProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MatrixProject.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/raf/CLionProjects/MatrixProject/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/MatrixProject.dir/rule

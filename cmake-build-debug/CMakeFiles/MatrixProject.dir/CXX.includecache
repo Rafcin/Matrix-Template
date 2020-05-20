@@ -6,16 +6,20 @@
 
 #IncludeRegexTransform: 
 
-/home/raf/CLionProjects/MatrixProject/MatrixOps.cpp
-cstdio
+/home/raf/CLionProjects/MatrixProject/MatrixFileIO.h
+vector
 -
-MatrixOps.h
-/home/raf/CLionProjects/MatrixProject/MatrixOps.h
+string
+-
+fstream
+-
 
 /home/raf/CLionProjects/MatrixProject/MatrixOps.h
 vector
 -
 iostream
+-
+cmath
 -
 
 /home/raf/CLionProjects/MatrixProject/main.cpp
@@ -23,4 +27,6 @@ iostream
 -
 MatrixOps.h
 /home/raf/CLionProjects/MatrixProject/MatrixOps.h
+MatrixFileIO.h
+/home/raf/CLionProjects/MatrixProject/MatrixFileIO.h
 
